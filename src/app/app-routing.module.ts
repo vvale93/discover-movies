@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { DiscoverContainerComponent } from './discover/components/discover-container/discover-container.component';
 
-// const routes: Routes = [
-//   { path: 'discover', component: DiscoverComponent }
-// ];
-const routes = []; //remove this when DiscoverComponent is enabled.
+const routes: Routes = [
+  { path: '', redirectTo: 'discover', pathMatch: 'full'},
+  { path: 'discover', component: DiscoverContainerComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
