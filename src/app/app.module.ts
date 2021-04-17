@@ -10,6 +10,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HeaderInterceptor } from './utilities/header-interceptor/header-interceptor.service'
 
 @NgModule({
   declarations: [
@@ -23,9 +25,14 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule, 
     AppRoutingModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HeaderInterceptor,
+    multi: true 
+  },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
