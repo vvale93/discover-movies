@@ -5,13 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SpinnerComponent } from './spinner/component/spinner.component';
-import { DiscoverComponent } from './discover/components/discover/discover.component';
+import { DiscoverContainerComponent } from './discover/components/discover-container/discover-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SpinnerComponent,
-    DiscoverComponent
+    DiscoverContainerComponent
   ],
   imports: [
     BrowserModule,
