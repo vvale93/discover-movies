@@ -1,1 +1,7 @@
-<p>spinner works!</p>
+<ng-container *ngIf="loadingSub | async as isLoading">
+    <div class="overlay" *ngIf="isLoading">
+        <div class="spinner-container">
+            <mat-spinner></mat-spinner>
+        </div>
+    </div>
+</ng-container>

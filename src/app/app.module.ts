@@ -16,6 +16,11 @@ import { MovieCardComponent } from './discover/components/movie-card/movie-card.
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { SpinnerService } from './spinner/services/spinner.service';
+import { SpinnerInterceptorService } from './spinner/services/spinner-interceptor.service';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
+
 
 
 @NgModule({
@@ -35,13 +40,22 @@ import { MatGridListModule } from '@angular/material/grid-list';
     HttpClientModule,
     MatCardModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    MatProgressSpinnerModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: HeaderInterceptor,
-    multi: true 
-  },],
+  providers: [
+    SpinnerService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeaderInterceptor,
+      multi: true 
+    },
+    { 
+      provide: HTTP_INTERCEPTORS,
+      useClass: SpinnerInterceptorService,
+      multi: true 
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
