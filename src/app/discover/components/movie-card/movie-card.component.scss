@@ -1,0 +1,32 @@
+
+.movie-card {
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+
+    .movie-poster {
+        height: 100%; 
+        width: 100%;
+        display:block;
+        margin: 0;
+    }
+    
+    .movie-title {
+        line-height: 1em;
+        height: 2em;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .movie-subtitle {
+        line-height: 1em;
+        height: 1em;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+    }
+}
