@@ -5,6 +5,13 @@
     </mat-card-header>
     
     <mat-card-content>
-        <img mat-card-image class="movie-poster" [src]="imgSource + movie.poster_path" [alt]="movie.title + ' poster.'">
+        <div class="img-wrapper">
+            <img mat-card-image class="movie-poster" [src]="imgSource + movie.poster_path" [alt]="movie.title + ' poster.'">
+            <div class="text-wrapper">
+                <p class="movie-description">
+                    {{movie.overview}}
+                </p>
+            </div>
+        </div>
     </mat-card-content>
 </mat-card>

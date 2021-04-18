@@ -30,3 +30,41 @@
         overflow: hidden;
     }
 }
+
+.img-wrapper {
+    position: relative;
+
+    .text-wrapper {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(173,83,125, 0.72);
+      color: #fff;
+      visibility: hidden;
+      margin: 0;
+      transition: opacity .2s, visibility .2s;
+      display: flex;
+      align-items: center;
+    }
+    
+    .movie-description {
+      box-sizing: border-box;
+      margin: 2em;
+      text-align: center;
+      line-height: 1.5em;
+      max-height: 18em;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 12;
+      overflow: hidden;
+      display: -webkit-box;
+    }
+    
+    &:hover .text-wrapper {
+      visibility: visible;
+      opacity: 1;
+      
+    }
+}
+
