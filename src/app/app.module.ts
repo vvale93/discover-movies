@@ -25,6 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
+import { MovieDetailComponent } from './discover/components/movie-detail/movie-detail.component';
 
 
 
@@ -37,6 +38,7 @@ import {MatInputModule} from '@angular/material/input';
     NavbarComponent,
     MovieCardComponent,
     SearchMoviesComponent,
+    MovieDetailComponent,
   ],
   imports: [
     BrowserModule,

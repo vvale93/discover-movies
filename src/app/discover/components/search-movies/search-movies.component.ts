@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 import { debounceTime, filter, map, pluck, startWith, switchMap } from 'rxjs/operators';
 import { Movie } from 'src/app/utilities/interfaces/movie';
@@ -16,7 +17,10 @@ export class SearchMoviesComponent implements OnInit {
    filteredOptions: Observable<Movie[]>;
    searchResult = [];
   
-  constructor(private discoverService: DiscoverService) { 
+  constructor(
+    private discoverService: DiscoverService,
+    private router: Router 
+    ) { 
     this.searchControl = new FormControl('')
   }
 
@@ -28,5 +32,11 @@ export class SearchMoviesComponent implements OnInit {
         return searchText  && searchText.trim().length > 0 ? this.discoverService.searchMovies(searchText) : of({results: this.moviesList});
       }),
       pluck('results'),
-    )}
+    )
+  }
+
+  public openMovieDetail(option): void {
+    console.log(option)
+    this.router.navigate([`/discover/${option.id}`], { state: option })
+  }
 }

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from '../../../utilities/interfaces/movie';
 import { Genre } from '../../../utilities/interfaces/genre';
 import * as _ from 'lodash';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-movie-card',
@@ -16,7 +17,7 @@ export class MovieCardComponent implements OnInit {
   public subtitle: string = '';
   public imgSource: string ="https://image.tmdb.org/t/p/w500";
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.getGenresNames();
@@ -31,6 +32,10 @@ export class MovieCardComponent implements OnInit {
       }
     })
     this.subtitle = matchedGenres.join(', ')
+  }
+
+  public openMovieDetail(): void {
+    this.router.navigate([`/discover/${this.movie.id}`], { state: this.movie })
   }
 
 }
