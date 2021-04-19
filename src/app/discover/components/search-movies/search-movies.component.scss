@@ -8,4 +8,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    .search-form {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .search-mat-form-field {
+            width: 40%;
+        }
+    }
 }

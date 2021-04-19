@@ -5,3 +5,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-progress-spinner circle, .mat-spinner circle { //mover a un archivo aparte
     stroke: rgb(137,9,69);
 }
+
+.search-container  .mat-form-field-outline { // mover a un archivo aparte
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.search-panel {
+    border-radius: 5px;
+}
