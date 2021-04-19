@@ -24,6 +24,8 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+
 
 
 
@@ -50,6 +52,7 @@ import { FormsModule } from '@angular/forms';
     MatAutocompleteModule,
     FormsModule,
     ReactiveFormsModule,
+    MatInputModule,
     MatFormFieldModule
   ],
   providers: [
