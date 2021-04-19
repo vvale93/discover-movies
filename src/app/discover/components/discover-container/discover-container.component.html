@@ -1,4 +1,5 @@
 <div class="main-container">
+    <app-search-movies></app-search-movies>
     <mat-grid-list cols="4" rowHeight="1:2" gutterSize="12" *ngIf="(genresList | async)?.genres as genres">
         <mat-grid-tile *ngFor="let movie of (moviesList | async)?.results">
             <app-movie-card [movie]="movie" [genres]="genres"></app-movie-card>

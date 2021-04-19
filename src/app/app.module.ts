@@ -19,7 +19,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { SpinnerService } from './spinner/services/spinner.service';
 import { SpinnerInterceptorService } from './spinner/services/spinner-interceptor.service';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-
+import { SearchMoviesComponent } from './discover/components/search-movies/search-movies.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -30,6 +34,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     DiscoverContainerComponent,
     NavbarComponent,
     MovieCardComponent,
+    SearchMoviesComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +46,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatAutocompleteModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
   ],
   providers: [
     SpinnerService,
