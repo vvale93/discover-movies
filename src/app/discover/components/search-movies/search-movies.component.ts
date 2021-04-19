@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { debounceTime, filter, map, pluck, startWith, switchMap } from 'rxjs/operators';
 import { Movie } from 'src/app/utilities/interfaces/movie';
+import { SearchResponse } from 'src/app/utilities/interfaces/search-response';
+import { DiscoverService } from '../../services/discover.service';
 @Component({
   selector: 'app-search-movies',
   templateUrl: './search-movies.component.html',
@@ -11,23 +13,20 @@ import { Movie } from 'src/app/utilities/interfaces/movie';
 export class SearchMoviesComponent implements OnInit {
   @Input() moviesList: Movie[];
    searchControl: FormControl;
-   options: string[] = ['One', 'Two', 'Three'];
    filteredOptions: Observable<Movie[]>;
+   searchResult = [];
   
-  constructor() { 
+  constructor(private discoverService: DiscoverService) { 
     this.searchControl = new FormControl('')
-    
   }
 
   ngOnInit(): void {
     this.filteredOptions = this.searchControl.valueChanges.pipe(
       startWith(''),
-      map(value => this.filterValues(value))
-    );
-  }
-
-  private filterValues(value: string): Movie[] {
-    const filterValue = value.toLowerCase();
-    return this.moviesList.filter(option => option.title.toLowerCase().indexOf(filterValue) === 0);
-  }
+      debounceTime(500),
+      switchMap((searchText: string) => {
+        return searchText  && searchText.trim().length > 0 ? this.discoverService.searchMovies(searchText) : of({results: this.moviesList});
+      }),
+      pluck('results'),
+    )}
 }
