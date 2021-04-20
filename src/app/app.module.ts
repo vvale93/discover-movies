@@ -24,8 +24,10 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { MovieDetailComponent } from './discover/components/movie-detail/movie-detail.component';
+import { StarsFilterComponent } from './discover/components/stars-filter/stars-filter.component';
+import { MovieCardsContainerComponent } from './discover/components/movie-cards-container/movie-cards-container.component';
 
 
 
@@ -39,6 +41,8 @@ import { MovieDetailComponent } from './discover/components/movie-detail/movie-d
     MovieCardComponent,
     SearchMoviesComponent,
     MovieDetailComponent,
+    StarsFilterComponent,
+    MovieCardsContainerComponent,
   ],
   imports: [
     BrowserModule,

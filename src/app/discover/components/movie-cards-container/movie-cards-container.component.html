@@ -1,0 +1,14 @@
+<div class="movies-container">
+    <div class="section-header">
+        <h1 class="section-title"><mat-icon aria-hidden="false" aria-label="Example home icon" class="whatshot-icon">whatshot</mat-icon> Popular Movies</h1>
+        <div class="rank-filter">
+            <h3 class="filter-text">Filter by ranking</h3>
+            <app-stars-filter></app-stars-filter>
+        </div>
+    </div>
+    <mat-grid-list cols="5" rowHeight="1:2" gutterSize="12" *ngIf="(genresList | async)?.genres as genres">
+        <mat-grid-tile *ngFor="let movie of moviesList">
+            <app-movie-card [movie]="movie" [genres]="genres"></app-movie-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
