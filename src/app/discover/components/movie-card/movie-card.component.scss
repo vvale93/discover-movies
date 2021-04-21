@@ -19,6 +19,13 @@
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
+        .title-link {
+          text-decoration: none;
+          color: inherit;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
     }
 
     .movie-subtitle {
@@ -33,14 +40,14 @@
 
 .img-wrapper {
     position: relative;
-
+    cursor: pointer;
     .text-wrapper {
       position: absolute;
       top: 0;
       bottom: 0;
       left: 0;
       right: 0;
-      background: rgba(173,83,125, 0.72);
+      background: rgba(52, 155, 146, 0.72);
       color: #fff;
       visibility: hidden;
       margin: 0;

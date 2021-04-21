@@ -1,11 +1,11 @@
-<mat-card class="movie-card" (click)="openMovieDetail()">
+<mat-card class="movie-card">
     <mat-card-header>
-      <mat-card-title class="movie-title"> {{movie.title}}</mat-card-title>
+      <mat-card-title class="movie-title"> <a class="title-link" [routerLink]="'/' + movie.id">{{movie.title}}</a></mat-card-title>
       <mat-card-subtitle class="movie-subtitle">{{subtitle}}</mat-card-subtitle>
     </mat-card-header>
     
     <mat-card-content>
-        <div class="img-wrapper">
+        <div class="img-wrapper" (click)="openMovieDetail()">
             <img mat-card-image class="movie-poster" [src]="imgSource + movie.poster_path" [alt]="movie.title + ' poster.'">
             <div class="text-wrapper">
                 <p class="movie-description">

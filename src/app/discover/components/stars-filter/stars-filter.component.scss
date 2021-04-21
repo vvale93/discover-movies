@@ -4,6 +4,7 @@
     flex-direction: row-reverse;
     .star-icon {
         color: #d3d3d3;
+        cursor: pointer;
         &.yellow-star {
             color: #FFEB3B;
         }
