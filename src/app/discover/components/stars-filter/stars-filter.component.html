@@ -1,3 +1,12 @@
 <div class="stars-container">
-    <mat-icon aria-hidden="false" aria-label="Example home icon" class="star-icon" *ngFor="let star of starsArray">grade</mat-icon>
+    <mat-icon 
+    aria-hidden="false"
+    aria-label="Example home icon"
+    class="star-icon"
+    *ngFor="let star of starsArray"
+    [ngClass]="{'yellow-star': star.shouldPaint}"
+    (click)="filterByRanking(star)"
+    >
+        grade
+    </mat-icon>
 </div>

@@ -7,7 +7,7 @@
         </div>
     </div>
     <mat-grid-list cols="5" rowHeight="1:2" gutterSize="12" *ngIf="(genresList | async)?.genres as genres">
-        <mat-grid-tile *ngFor="let movie of moviesList">
+        <mat-grid-tile *ngFor="let movie of (moviesList | async)">
             <app-movie-card [movie]="movie" [genres]="genres"></app-movie-card>
         </mat-grid-tile>
     </mat-grid-list>

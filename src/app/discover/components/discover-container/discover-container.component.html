@@ -1,4 +1,4 @@
-<ng-container *ngIf="(moviesList | async)?.results as moviesList">
-    <app-search-movies [moviesList]="moviesList"></app-search-movies>
-    <app-movie-cards-container [moviesList]="moviesList"></app-movie-cards-container>
+<ng-container *ngIf="(moviesList | async)">
+    <app-search-movies></app-search-movies>
+    <app-movie-cards-container></app-movie-cards-container>
 </ng-container>

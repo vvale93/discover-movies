@@ -1,6 +1,15 @@
 .stars-container {
     margin-left: 20px;
+    display: flex;
+    flex-direction: row-reverse;
     .star-icon {
         color: #d3d3d3;
+        &.yellow-star {
+            color: #FFEB3B;
+        }
+    }
+    .star-icon:hover,
+    .star-icon:hover ~ .star-icon {
+        color: #FFEB3B;
     }
 }
