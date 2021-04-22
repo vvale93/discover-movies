@@ -1,8 +1,7 @@
 <div class="movie-title-wrapper">
     <h1 class="movie-title">
-        <span class="title-name">{{ movieDetails.title }}</span> ({{
-        movieDetails.release_date | date: "yyyy"
-        }})
+        <span class="title-name">{{ movieDetails.title }}</span> 
+        ({{ movieDetails.release_date | date: "yyyy" }})
     </h1>
     <div class="movie-rating">
         <span class="rating-number">{{ movieDetails.vote_average }}</span><span class="max-value">/10</span>

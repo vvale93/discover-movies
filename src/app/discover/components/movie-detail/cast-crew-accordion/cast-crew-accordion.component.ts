@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Cast, Crew } from 'src/app/utilities/interfaces/credits';
 import { Movie } from 'src/app/utilities/interfaces/movie';
+import { TableConfiguration } from 'src/app/utilities/interfaces/table-configuration';
 
 @Component({
   selector: 'app-cast-crew-accordion',
@@ -7,11 +9,11 @@ import { Movie } from 'src/app/utilities/interfaces/movie';
   styleUrls: ['./cast-crew-accordion.component.scss']
 })
 export class CastCrewAccordionComponent implements OnInit {
-  @Input() cast;
-  @Input() crew;
+  @Input() cast: Cast[];
+  @Input() crew: Crew[];
   @Input() movieDetails: Movie;
   public imgSource: string ="https://image.tmdb.org/t/p/w500";
-  castTableConfiguration = {
+  public castTableConfiguration: TableConfiguration = {
     displayedColumns: ['Photo', 'Name', 'Character'],
     columnsDetail: [
       {
@@ -32,7 +34,7 @@ export class CastCrewAccordionComponent implements OnInit {
     ]
   };
 
-  crewTableConfiguration = {
+  public crewTableConfiguration : TableConfiguration = {
     displayedColumns: ['Name', 'Department', 'Job'],
     columnsDetail: [
       {

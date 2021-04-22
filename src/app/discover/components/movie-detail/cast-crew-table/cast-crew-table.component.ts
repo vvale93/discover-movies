@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/utilities/interfaces/movie';
+import { TableConfiguration } from 'src/app/utilities/interfaces/table-configuration';
 
 @Component({
   selector: 'app-cast-crew-table',
@@ -7,11 +8,9 @@ import { Movie } from 'src/app/utilities/interfaces/movie';
   styleUrls: ['./cast-crew-table.component.scss'],
 })
 export class CastCrewTableComponent implements OnInit {
-  @Input() dataSource;
-
-  @Input() displayedColumns;
+  @Input() dataSource: any[];
   @Input() movieDetails: Movie;
-  @Input() tableConfiguration;
+  @Input() tableConfiguration: TableConfiguration;
   public imgSource: string = 'https://image.tmdb.org/t/p/w500';
   constructor() {}
 
