@@ -28,6 +28,16 @@ import { MatInputModule } from '@angular/material/input';
 import { MovieDetailComponent } from './discover/components/movie-detail/movie-detail.component';
 import { StarsFilterComponent } from './discover/components/stars-filter/stars-filter.component';
 import { MovieCardsContainerComponent } from './discover/components/movie-cards-container/movie-cards-container.component';
+import { MovieResolver } from './utilities/resolvers/movie.resolver';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTableModule } from '@angular/material/table';
+import { CastCrewTableComponent } from './discover/components/movie-detail/cast-crew-table/cast-crew-table.component';
+import { CastCrewAccordionComponent } from './discover/components/movie-detail/cast-crew-accordion/cast-crew-accordion.component';
+import { MovieDetailNavbarComponent } from './discover/components/movie-detail/movie-detail-navbar/movie-detail-navbar.component';
+import { MovieDetailHeaderComponent } from './discover/components/movie-detail/movie-detail-header/movie-detail-header.component';
+import { MovieDetailDescriptionComponent } from './discover/components/movie-detail/movie-detail-description/movie-detail-description.component';
+
 
 
 
@@ -43,6 +53,11 @@ import { MovieCardsContainerComponent } from './discover/components/movie-cards-
     MovieDetailComponent,
     StarsFilterComponent,
     MovieCardsContainerComponent,
+    CastCrewTableComponent,
+    CastCrewAccordionComponent,
+    MovieDetailNavbarComponent,
+    MovieDetailHeaderComponent,
+    MovieDetailDescriptionComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +74,10 @@ import { MovieCardsContainerComponent } from './discover/components/movie-cards-
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatChipsModule,
+    MatExpansionModule,
+    MatTableModule
   ],
   providers: [
     SpinnerService,
@@ -72,7 +90,8 @@ import { MovieCardsContainerComponent } from './discover/components/movie-cards-
       provide: HTTP_INTERCEPTORS,
       useClass: SpinnerInterceptorService,
       multi: true 
-    }
+    },
+    MovieResolver
   ],
   bootstrap: [AppComponent]
 })
