@@ -13,6 +13,7 @@
             </p>
             <mat-icon aria-hidden="false" aria-label="Example home icon" class="star-icon"> sentiment_dissatisfied </mat-icon>
         </div>
+        
         <mat-grid-list cols="5" rowHeight="1:2" gutterSize="12" >
             <mat-grid-tile *ngFor="let movie of (moviesList | async) as movies">
                 <app-movie-card [movie]="movie" [genres]="genres"></app-movie-card>
