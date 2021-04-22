@@ -4,9 +4,11 @@ import { DiscoverMovie } from '../../utilities/interfaces/discover-movie';
 import { GenresResponse } from '../../utilities/interfaces/genre';
 import { SearchResponse } from '../../utilities/interfaces/search-response';
 
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Movie } from 'src/app/utilities/interfaces/movie';
 import { tap } from 'rxjs/operators';
+import { DetailsResponse } from 'src/app/utilities/interfaces/details-response';
+import { CreditResponse } from 'src/app/utilities/interfaces/credits';
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +40,14 @@ export class DiscoverService {
 
   public setFilteredMovieList(moviesFiltered: Movie[]) {
     this.movieListSubj.next(moviesFiltered);
+  }
+
+  public getDetails(id): Observable<DetailsResponse> {
+    return this.http.get<DetailsResponse>(`${this.baseUrl}movie/${id}`)
+  } 
+
+  public getCredits(id) : Observable<CreditResponse> {
+    return this.http.get<CreditResponse>(`${this.baseUrl}movie/${id}/credits`)
   }
 
 }

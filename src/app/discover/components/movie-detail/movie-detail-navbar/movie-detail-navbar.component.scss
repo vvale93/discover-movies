@@ -1,0 +1,21 @@
+.navbar-container {
+    .title-container {
+        display: flex;
+        justify-content: center;
+        height: 5em;
+        align-items: center;
+        .navbar-title {
+            font-family: 'Francois One', sans-serif;
+            color: #009688;
+            font-size: 36px;
+        }
+    }
+    .go-back {
+        font-style: italic;
+        display: flex;
+        align-items: center;
+        .arrow_back-icon {
+            margin-right: 5px;
+        }
+    }
+}

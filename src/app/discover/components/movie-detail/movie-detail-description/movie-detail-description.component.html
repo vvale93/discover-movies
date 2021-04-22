@@ -1,0 +1,26 @@
+<div class="description-wrapper" >
+    <img class="movie-poster" [src]="imgSource + movieDetails.poster_path"
+        [alt]="movieDetails.title + ' poster.'" />
+    <div class="movie-information" *ngIf="detailsData">
+        <p class="description-text">
+            {{ movieDetails.overview }}
+        </p>
+        <p class="extra-info">
+            <span class="info-label">Director:</span> {{ detailsData.director?.name }}
+        </p>
+        <p class="extra-info">
+            <span class="info-label">Writer: </span> {{ detailsData.writer?.name }}
+        </p>
+        <p class="extra-info">
+            <span class="info-label">Stars:</span> {{ detailsData.stars }}
+        </p>
+        <p class="extra-info">
+            <span class="info-label">Budget:</span>
+            {{ movieDetails.budget | currency }}
+        </p>
+        <p class="extra-info">
+            <span class="info-label">Revenue:</span>
+            {{ movieDetails.revenue | currency }}
+        </p>
+    </div>
+</div>

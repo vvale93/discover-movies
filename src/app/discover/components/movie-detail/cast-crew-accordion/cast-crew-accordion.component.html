@@ -1,0 +1,19 @@
+<mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Full Cast
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <app-cast-crew-table [dataSource]="cast" [movieDetails]="movieDetails" [tableConfiguration]="castTableConfiguration"></app-cast-crew-table>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Full Crew
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-cast-crew-table [dataSource]="crew" [movieDetails]="movieDetails" [tableConfiguration]="crewTableConfiguration"></app-cast-crew-table>
+      </mat-expansion-panel>
+  </mat-accordion>

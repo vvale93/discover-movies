@@ -1,1 +1,8 @@
-<p>movie-detail works!</p>
+<app-movie-detail-navbar></app-movie-detail-navbar>
+
+<div class="movie-details-container">
+    <app-movie-detail-header [movieDetails]="movieDetails"></app-movie-detail-header>
+    <app-movie-detail-description [detailsData]="detailsData" [movieDetails]="movieDetails"></app-movie-detail-description>
+    <app-cast-crew-accordion [cast]="cast" [crew]="crew" [movieDetails]="movieDetails"></app-cast-crew-accordion>
+      
+</div>

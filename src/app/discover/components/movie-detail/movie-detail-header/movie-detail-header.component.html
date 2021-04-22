@@ -1,0 +1,16 @@
+<div class="movie-title-wrapper">
+    <h1 class="movie-title">
+        <span class="title-name">{{ movieDetails.title }}</span> ({{
+        movieDetails.release_date | date: "yyyy"
+        }})
+    </h1>
+    <div class="movie-rating">
+        <span class="rating-number">{{ movieDetails.vote_average }}</span><span class="max-value">/10</span>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" class="star-icon">
+            grade
+        </mat-icon>
+    </div>
+</div>
+<mat-chip-list aria-label="Movie genres">
+    <mat-chip *ngFor="let genre of movieDetails.genres">{{ genre.name }}</mat-chip>
+</mat-chip-list>

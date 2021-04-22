@@ -1,0 +1,23 @@
+.movie-title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .title-name{
+        font-weight: bold;
+    }
+    .movie-rating {
+        display: flex;
+        align-items: center;
+        .rating-number {
+            font-size: 24px;
+            margin-right: 4px;
+        }
+        .max-value {
+            color: #808080;
+            margin-right: 5px;
+        }
+        .star-icon {
+            color: #FFEB3B;
+            font-size: 28px;
+        }
+    }
+}

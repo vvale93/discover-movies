@@ -1,0 +1,31 @@
+.description-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+    .movie-poster {
+        width: 25%;
+    }
+    .movie-information {
+        display: flex;
+        flex-direction: column;
+        padding: 2em;
+        margin-left: 1em;
+        height: 100%;
+        background-color: rgb(125,239,228, 0.2);
+        background-image: linear-gradient(240deg, rgb(125,239,228, 0.2), rgba(255, 255, 255, 0.8));
+        .description-text {
+            font-size: 16px;
+            margin-bottom: 2em;
+        }
+        .extra-info {
+            font-style: italic;
+            font-size: 15px;
+            margin-bottom: 1.5em;
+            .info-label {
+                font-weight: bold;
+                color: #009688;
+                font-style: normal;
+            }
+        }
+    }
+}

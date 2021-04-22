@@ -1,0 +1,14 @@
+<table mat-table [dataSource]="dataSource" class="movie-data-table" *ngIf="dataSource && tableConfiguration">
+    <ng-container *ngFor="let config of tableConfiguration.columnsDetail" [matColumnDef]="config.columnHeader">
+        <th mat-header-cell *matHeaderCellDef> {{config.columnHeader}} </th>
+        <td mat-cell *matCellDef="let person">
+            <span *ngIf="config.valueType === 'text'; else showImage">{{person[config.sourceProperty]}} </span>
+            <ng-template #showImage>
+                <img class="table-image" [src]="person[config.sourceProperty] !== null ? imgSource + person[config.sourceProperty] : 'assets/notfound.jpg'"/>
+            </ng-template>
+        </td>
+    </ng-container>  
+  
+    <tr mat-header-row *matHeaderRowDef="tableConfiguration.displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: tableConfiguration.displayedColumns"></tr>
+  </table>
