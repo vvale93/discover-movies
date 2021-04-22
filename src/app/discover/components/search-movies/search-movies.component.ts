@@ -36,7 +36,6 @@ export class SearchMoviesComponent implements OnInit {
   }
 
   public openMovieDetail(option): void {
-    console.log(option)
-    this.router.navigate([`/discover/${option.id}`], { state: option })
+    this.router.navigate([`/discover/${option.id}`]);
   }
 }

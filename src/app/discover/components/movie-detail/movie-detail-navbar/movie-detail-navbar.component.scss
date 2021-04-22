@@ -8,12 +8,15 @@
             font-family: 'Francois One', sans-serif;
             color: #009688;
             font-size: 36px;
+            text-decoration: none;
         }
     }
     .go-back {
         font-style: italic;
         display: flex;
         align-items: center;
+        cursor: pointer;
+        width: fit-content;
         .arrow_back-icon {
             margin-right: 5px;
         }

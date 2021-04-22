@@ -1,8 +1,8 @@
 <nav class="navbar-container">
     <div class="title-container">
-        <span class="navbar-title"> Discover Movies </span>
+        <a routerLink="/discover" class="navbar-title">Discover Movies</a>
     </div>
-    <div class="go-back">
+    <div class="go-back" (click)="goToDiscover()">
         <mat-icon aria-hidden="false" aria-label="Example home icon" class="arrow_back-icon">arrow_back</mat-icon>
         Go to discover dashboard
     </div>

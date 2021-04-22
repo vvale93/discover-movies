@@ -35,7 +35,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   public openMovieDetail(): void {
-    this.router.navigate([`/discover/${this.movie.id}`], { state: this.movie })
+    this.router.navigate([`/discover/${this.movie.id}`]);
   }
 
 }
