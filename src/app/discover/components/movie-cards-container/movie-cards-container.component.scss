@@ -26,4 +26,14 @@
             }
         }
     }
+    .no-movies-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        .no-movies {
+            margin-bottom: 0;
+            margin-right: 5px;
+        }
+    }
 }
